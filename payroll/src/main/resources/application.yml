@@ -24,3 +24,4 @@ logging:
     root: info
     com.jadecross: info
     org.hibernate.SQL: debug
+
