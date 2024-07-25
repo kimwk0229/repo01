@@ -23,12 +23,12 @@ class EmployeeController {
 		this.repository = repository;
 	}
 
-	@GetMapping("/employees")  //
+	@GetMapping("/employees")  //1122
 	List<Employee> all() {
 		return repository.findAll();
 	}
 
-	@PostMapping("/employees")  //
+	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		return repository.save(newEmployee);
 	}
