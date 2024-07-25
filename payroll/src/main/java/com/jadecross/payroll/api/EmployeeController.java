@@ -23,12 +23,12 @@ class EmployeeController {
 		this.repository = repository;
 	}
 
-	@GetMapping("/employees")  //사원 목록 조회..
+	@GetMapping("/employees")  //사원 목록 조회
 	List<Employee> all() {
 		return repository.findAll();
 	}
 
-	@PostMapping("/employees")  //사원 추가..
+	@PostMapping("/employees")  //사원 추가
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		return repository.save(newEmployee);
 	}
@@ -39,7 +39,7 @@ class EmployeeController {
 		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
 	}
 
-	@PutMapping("/employees/{id}")  //사원 수정 1122
+	@PutMapping("/employees/{id}")  //사원 수정
 	Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable("id") Long id) {
 
 		return repository.findById(id).map(employee -> {
@@ -51,7 +51,7 @@ class EmployeeController {
 		});
 	}
 
-	@DeleteMapping("/employees/{id}")  //사원 삭제 1122
+	@DeleteMapping("/employees/{id}")  //사원 삭제
 	void deleteEmployee(@PathVariable(name = "id") Long id) {
 		repository.deleteById(id);
 	}
