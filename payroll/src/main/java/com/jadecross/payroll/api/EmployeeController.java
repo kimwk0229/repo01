@@ -39,7 +39,7 @@ class EmployeeController {
 		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
 	}
 
-	@PutMapping("/employees/{id}")  //사원 수정
+	@PutMapping("/employees/{id}")  //사원 수정 11
 	Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable("id") Long id) {
 
 		return repository.findById(id).map(employee -> {
