@@ -1,1 +1,26 @@
 spring.application.name: payroll
+
+server.port: 8080
+
+spring.datasource:
+  url: jdbc:h2:file:./db/payroll
+  username: sa
+  password: 
+
+spring.jpa:
+  hibernate.ddl-auto: update
+  show-sql: false
+
+springdoc:
+  swagger-ui:
+    path: /
+    tags-sorter: alpha
+    operations-sorter: alpha
+    defaultModelsExpandDepth: 0
+
+logging:
+  file.path: ./log
+  level:
+    root: info
+    com.jadecross: info
+    org.hibernate.SQL: debug
