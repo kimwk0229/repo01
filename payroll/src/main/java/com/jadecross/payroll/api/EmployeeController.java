@@ -23,7 +23,7 @@ class EmployeeController {
 		this.repository = repository;
 	}
 
-	@GetMapping("/employees")
+	@GetMapping("/employees")  //사원 목록
 	List<Employee> all() {
 		return repository.findAll();
 	}
