@@ -23,17 +23,17 @@ class EmployeeController {
 		this.repository = repository;
 	}
 
-	@GetMapping("/employees")  //사원 목록
+	@GetMapping("/employees")
 	List<Employee> all() {
 		return repository.findAll();
 	}
 
-	@PostMapping("/employees")  //사원 추가
+	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		return repository.save(newEmployee);
 	}
 
-	@GetMapping("/employees/{id}")  //사원 상세 조회 11112222
+	@GetMapping("/employees/{id}")
 	Employee one(@PathVariable("id") Long id) {
 
 		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
