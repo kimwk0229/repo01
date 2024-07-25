@@ -271,3 +271,7 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,eclipse,visualstudiocode,maven,gradle,java
+payroll/db/
+.vscode/settings.json
+.vscode/launch.json
+
