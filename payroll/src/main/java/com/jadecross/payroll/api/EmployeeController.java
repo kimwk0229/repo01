@@ -51,7 +51,7 @@ class EmployeeController {
 		});
 	}
 
-	@DeleteMapping("/employees/{id}")
+	@DeleteMapping("/employees/{id}")  //사원 id로 삭제
 	void deleteEmployee(@PathVariable(name = "id") Long id) {
 		repository.deleteById(id);
 	}
