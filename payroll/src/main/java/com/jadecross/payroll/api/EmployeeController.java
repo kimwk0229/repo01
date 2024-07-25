@@ -23,20 +23,15 @@ class EmployeeController {
 		this.repository = repository;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
 	@GetMapping("/employees")
 	List<Employee> all() {
 		return repository.findAll();
 	}
-	// end::get-aggregate-root[]
 
 	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		return repository.save(newEmployee);
 	}
-
-	// Single item
 
 	@GetMapping("/employees/{id}")
 	Employee one(@PathVariable("id") Long id) {
