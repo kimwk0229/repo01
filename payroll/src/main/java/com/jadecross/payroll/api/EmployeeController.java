@@ -33,7 +33,11 @@ class EmployeeController {
 		return repository.save(newEmployee);
 	}
 
+<<<<<<< HEAD
 	@GetMapping("/employees/{id}")  //사원 상세 조회 1122
+=======
+	@GetMapping("/employees/{id}")  //사원 상세 조회 22
+>>>>>>> branch 'master' of https://github.com/kimwk0229/repo01.git
 	Employee one(@PathVariable("id") Long id) {
 
 		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
