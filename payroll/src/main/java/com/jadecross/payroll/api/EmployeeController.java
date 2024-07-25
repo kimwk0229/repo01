@@ -28,7 +28,7 @@ class EmployeeController {
 		return repository.findAll();
 	}
 
-	@PostMapping("/employees")
+	@PostMapping("/employees")  //사원 추가
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		return repository.save(newEmployee);
 	}
