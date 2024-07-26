@@ -33,7 +33,7 @@ class EmployeeController {
 		return repository.save(newEmployee);
 	}
 
-	@GetMapping("/employees/{id}")
+	@GetMapping("/employees/{id}") //사원 조회
 	Employee one(@PathVariable("id") Long id) {
 
 		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
