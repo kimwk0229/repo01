@@ -25,29 +25,34 @@ class EmployeeController {
 
 	@GetMapping("/employees")
 	List<Employee> all() {
-		return repository.findAll();
+		var emps = repository.findAll();
+
+		return emps;
 	}
 
 	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
-		return repository.save(newEmployee);
+		var newEmp = repository.save(newEmployee);
+
+		return newEmp;
 	}
 
 	@GetMapping("/employees/{id}")
 	Employee one(@PathVariable("id") Long id) {
-
-		return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
+		var emp = repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
+		
+		return emp;
 	}
 
 	@PutMapping("/employees/{id}")
-	Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable("id") Long id) {
+	Employee replaceEmployee(@RequestBody Employee newEmp, @PathVariable("id") Long id) {
+		return repository.findById(id).map(emp -> {
+			emp.setName(newEmp.getName());
+			emp.setRole(newEmp.getRole());
 
-		return repository.findById(id).map(employee -> {
-			employee.setName(newEmployee.getName());
-			employee.setRole(newEmployee.getRole());
-			return repository.save(employee);
+			return repository.save(emp);
 		}).orElseGet(() -> {
-			return repository.save(newEmployee);
+			return repository.save(newEmp);
 		});
 	}
 

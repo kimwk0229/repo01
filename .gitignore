@@ -276,3 +276,4 @@ payroll/log/
 .vscode/settings.json
 .vscode/launch.json
 
+payroll/db/payroll.mv.db

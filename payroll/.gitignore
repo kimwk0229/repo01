@@ -38,5 +38,6 @@ out/
 .vscode/
 
 db/
+db/payroll.mv.db
 log/
 
