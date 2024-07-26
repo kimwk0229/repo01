@@ -272,6 +272,7 @@ gradle-app.setting
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,eclipse,visualstudiocode,maven,gradle,java
 payroll/db/
+payroll/log/
 .vscode/settings.json
 .vscode/launch.json
-payroll/db/payroll.mv.db
+
