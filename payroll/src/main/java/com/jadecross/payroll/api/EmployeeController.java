@@ -30,7 +30,7 @@ class EmployeeController {
 		return emps;
 	}
 
-	@PostMapping("/employees")
+	@PostMapping("/employees") //사원 등록
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 		var newEmp = repository.save(newEmployee);
 
